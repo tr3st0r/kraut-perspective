@@ -1,0 +1,157 @@
+/* The basic website layout */
+body {
+  font-family: sans;
+  font-size: 16px;
+  background-color: #444;
+  color: #ddd;
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  grid-template-columns: 1fr 200px;
+  grid-gap: 1rem;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover,
+a:focus {
+  color: #ddd;
+}
+
+/* The website head */
+header {
+  grid-area: header;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #333;
+}
+
+header h1 {
+  flex: 1;
+}
+
+/* Navigation and Theme button go on the same line */
+header div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Button for Theme changeing */
+header button {
+  margin-left: 1rem;
+  border: none;
+  background: none;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
+
+header button:hover,
+header button:active {
+  text-shadow: 0 0 0 #ddd;
+}
+
+/* The main area all entries will be added inside this container */
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+/* indicates a new year */
+main h2 {
+  padding: 1rem 1ch;
+  border-bottom: 2px solid #ddd;
+  border-top: 2px solid #ddd;
+  width: 25%;
+}
+
+/* the entry */
+main article {
+  background-color: #333;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+main article div.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main article h3 {
+  flex: 1;
+}
+
+main article span.entry-date {
+  font-style: italic;
+}
+
+main article img {
+  max-width: 100%;
+  height: auto;
+}
+
+main article figcaption {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+main article ul:last-child::before {
+  content: "Tags:";
+  margin-right: 1ch;
+}
+
+main article ul:last-child {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main article ul:last-child li {
+  margin-right: 1ch;
+}
+
+/* display options for the entry */
+.hidden {
+  display: none;
+}
+
+/* navigation menu based on year and month */
+aside {
+  grid-area: aside;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside > ul {
+  padding: 0;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #333;
+  padding: 0;
+  padding-left: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer ul li {
+  margin-right: 1ch;
+}

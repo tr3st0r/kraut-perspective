@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>The Kraut Perspective</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Trestor">
+    <meta name="description" content="Auf diesem Blog behandle ich aktuelle Themen, welche mich beschäftigen. Es geht um Politik, Umwelt und Technik.">
+    <link href="style/main.css" rel="stylesheet">
+    <!-- if a user with a small screen is visiting the site, the style gets adjusted --!>
+    <link media="screen and (max-width: 500px)" href="style/small.css" rel="stylesheet">
+    <!-- the script loads deffered. This ensures that the elements it accesses are loaded --!>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>The Kraut Perspective</h1>
+      <div>
+        <nav>
+        <!-- the user can input search terms to filter the blog --!>
+          <input type="text" id="search" name="search" placeholder="search blog...">
+        </nav>
+        <!-- the user can change the theme of the blog --!>
+        <button title="Change theme" aria-label="Change theme">
+          🖌️
+        </button>
+        <ul id="themes-list" style="display: none">
+          <li>Dark</li>
+          <li>Light</li>
+        </ul>
+      </div>
+    </header>
+    <main>
+    <!-- the main content is divided in years --!>
+      <section id="2020">
+        <h2>2020</h2>
+        <!-- and months, the user can navigate to either of them --!>
+        <section id="2020-08">
+        <h3>August</h3>
+        <!-- every article consists of title, date, content and tags --!>
+          <article>
+          <!-- the article title is wrapped in a "head" for easier manipulation (flexbox) --!>
+            <div class="entry-head">
+              <h3>Ein erster Eintrag...</h3>
+              <span class="entry-date">30.08.2020</span>
+            </div>
+            <!-- here is the content it can be anything you like (not just a paragraph) --!>
+            <p>
+              Dies wird der erste Beitrag von (hoffentlich) vielen. Ich werde mich mit aktellen Themen beschäftigen, dabei nehme ich mir die Freiheit, über alles mögliche zu schreiben. Wahrscheinlich werden sich jedoch die meisten Themen um Politik, die Umwelt, Medizin und Technik drehen.
+            </p>
+            <p>
+              Im Moment ist die Webseite unter starker Bearbeitung, es wird sich also noch viel weiterentwickeln.
+            </p>
+            <figure>
+              <img src="img/bart-vs-homer-construction.jpg" alt="Ein Bild von Legofiguren. Bart Simpson sitzt auf einem Bulldozer und verfolgt Homer Simpson.">
+              <figcaption>
+              <a href="https://www.flickr.com/photos/130443893@N07/17009043265">"Bart vs Homer"</a> von <a href="https://www.flickr.com/photos/130443893@N07">www.giocovisione.com</a> als <a href="https://creativecommons.org/licenses/by/2.0/"> CC BY 2.0</a> Lizenz
+              </figcaption>
+            </figure>
+            <!-- here is a list of tags --!>
+            <ul>
+              <li>Meta</li>
+              <li>Start</li>
+            </ul>
+          </article>
+        </section>
+      </section>
+    </main>
+    <aside>
+    <!-- here we link to the different sections of the blog, it is a list of years --!>
+      <ul>
+        <li><a href="#2020">2020</a>
+        <!-- with a list of months --!>
+          <ul>
+            <li><a href="#2020-08">August</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <!-- some miscellaneous content --!>
+    <footer>
+      <p>
+        Ich bin erreichbar unter <a href="mailto:tr3st0ro@gmail.com">tr3st0ro@gmail.com</a>.
+      </p>
+      <ul>
+        <li><a href="html/about.html">Über mich</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
