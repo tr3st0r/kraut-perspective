@@ -1,9 +1,18 @@
+/* The color variables, default is dark solarized */
+:root {
+  --background: #002b36;
+  --background-highlight: #073642;
+  --primary-text:  #839496;
+  --secondary-text: #586e75;
+  --emphasized-text: #93a1a1;
+  --highlight: #b58900;
+}
 /* The basic website layout */
 body {
   font-family: sans;
   font-size: 16px;
-  background-color: #444;
-  color: #ddd;
+  background-color: var(--background);
+  color: var(--primary-text);
   max-width: 1000px;
   height: 100%;
   margin: 0 auto;
@@ -17,12 +26,12 @@ body {
 }
 
 a {
-  color: #fff;
+  color: var(--highlight);
 }
 
 a:hover,
 a:focus {
-  color: #ddd;
+  background-color: var(--background-highlight);
 }
 
 /* The website head */
@@ -32,7 +41,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   padding: 0 1rem;
-  background-color: #333;
+  background-color: var(--background-highlight);
 }
 
 header h1 {
@@ -46,19 +55,46 @@ header div {
   align-items: center;
 }
 
+header input {
+  font-family: inherit;
+  font-size: 100%;
+  color: var(--highlight);
+  border: 1px solid var(--highlight);
+  border-radius: 5px;
+  background-color: var(--background);
+}
+
 /* Button for Theme changeing */
 header button {
   margin-left: 1rem;
   border: none;
   background: none;
   color: transparent;
-  text-shadow: 0 0 0 white;
+  text-shadow: 0 0 0 var(--highlight);
 }
 
 header button:hover,
 header button:active {
-  text-shadow: 0 0 0 #ddd;
+  text-shadow: 0 0 0 var(--background);
 }
+
+/* Menu for Theme changeing */
+header div ul {
+  list-style: none;
+  position: fixed;
+  background-color: var(--background-highlight);
+  border: 1px solid var(--highlight);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+header div ul li:hover,
+header div ul li:focus,
+header div ul li:active {
+  background-color: var(--background);
+  text-decoration: underline;
+}
+
 
 /* The main area all entries will be added inside this container */
 main {
@@ -69,15 +105,15 @@ main {
 /* indicates a new year */
 main h2 {
   padding: 1rem 1ch;
-  border-bottom: 2px solid #ddd;
-  border-top: 2px solid #ddd;
+  border-bottom: 2px solid var(--secondary-text);
+  border-top: 2px solid var(--secondary-text);
   width: 25%;
 }
 
 /* the entry */
 main article {
-  background-color: #333;
-  border-radius: 1rem;
+  /*background-color: #333;
+  border-radius: 1rem;*/
   padding: 1rem;
   margin-bottom: 1rem;
 }
@@ -93,8 +129,10 @@ main article h3 {
 
 main article span.entry-date {
   font-style: italic;
+  color: var(--secondary-text);
 }
 
+/* Images in the article */
 main article img {
   max-width: 100%;
   height: auto;
@@ -109,13 +147,11 @@ main article ul:last-child::before {
   content: "Tags:";
   margin-right: 1ch;
 }
-
 main article ul:last-child {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
 }
-
 main article ul:last-child li {
   margin-right: 1ch;
 }
@@ -138,20 +174,17 @@ aside > ul {
   padding: 0;
 }
 
+/* style the footer */
 footer {
   grid-area: footer;
-  background-color: #333;
+  background-color: var(--background-highlight);
   padding: 0;
   padding-left: 1rem;
 }
 
-footer ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-footer ul li {
-  margin-right: 1ch;
+/* links get normal background color on hover, the background of footer is highlighted */
+footer a:hover,
+footer a:focus,
+footer a:active {
+  background-color: var(--background);
 }
